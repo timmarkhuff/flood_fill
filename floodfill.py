@@ -3,7 +3,10 @@ import numpy as np
 import random
 
 class Pixel:
-    """This function keeps track of the color of the pixels in the target image"""
+    """This function keeps track of the color of the pixels in the target image 
+    This is Eric, and I also agree with Darius' aforementioned clarification"""
+    
+    
     def __init__(self, x:int, y:int, img:np.ndarray):
         self.x = x
         self.y = y
