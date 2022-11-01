@@ -22,6 +22,7 @@ class Pixel:
             cv2.imshow('img_to_show', img_to_show)
             cv2.waitKey(1)
 
+#check the tolerance
 def check_tolerance(tolerance:int,
                     target_pixel:Pixel, 
                     current_pixel:Pixel, 
@@ -31,6 +32,7 @@ def check_tolerance(tolerance:int,
             return False
     return True
 
+#add new piexls unsearched
 def find_adjacent_pixels_to_fill(tolerance:int,
                                 target_pixel:Pixel,
                                 current_pixel:Pixel,
@@ -66,6 +68,7 @@ def find_adjacent_pixels_to_fill(tolerance:int,
     
     return adjacent_pixels_to_fill
 
+#main function of floodfill
 def flood_fill(img:np.ndarray, 
                img_copy:np.ndarray, 
                tolerance:int,
