@@ -68,7 +68,7 @@ class FloodFiller:
         """
         self.pixel_fill_matrix[y][x] = 1
 
-    def run(self):
+    def run(self) -> None:
         """
         This method should be called iteratively within a main loop.
         Each iteration fills a few more pixels and returns the resulting image
@@ -95,8 +95,6 @@ class FloodFiller:
             fuel -= 1
             pixel = self.pixels_to_fill[0] # queue 
             self.pixels_to_fill = self.pixels_to_fill[1:]
-            # pixel = self.pixels_to_fill[-1] # stack
-            # self.pixels_to_fill = self.pixels_to_fill[:-1]
 
             # fill the pixel
             self.fill_pixel(pixel[0], pixel[1])
@@ -162,8 +160,7 @@ def main():
         t1 = timer()
         while run:
             is_finished, img_copy = flood_filler.run()
-
-            # cv2.circle(img_copy, (center_x, center_y), (6), (255,0,0), -1)
+            
             cv2.imshow('img_copy', img_copy)
             
             if is_finished:
